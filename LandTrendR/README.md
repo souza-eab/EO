@@ -5,13 +5,14 @@
 ## (2)  - An empirical, integrated forest biomass monitoring system. Environ. Res. Lett. 13 (2018).
 <https://doi.org/10.1088/1748-9326/aa9d9e>
 
-O algoritmo capta:
+## (3) O algoritmo capta:
 (1) Tendências em disturbios;
 (2) Recuperação;
 
-Baseado em:
+### Baseado em:
 Pixel a Pixel | Pontos individuais
 
-+Em: 
+
+## (4) +Em: 
 (1) Documentação: <https://emapr.github.io/LT-GEE/index.html>;
 (2) +InfoLab: <http://emapr.ceoas.oregonstate.edu/>
