@@ -16,3 +16,6 @@ Pixel a Pixel | Pontos individuais
 ## (4) +Em: 
 (1) Documentação: <https://emapr.github.io/LT-GEE/index.html>;
 (2) +InfoLab: <http://emapr.ceoas.oregonstate.edu/>
+
+## (5) Resumo(ppt):
+(1) Link: <https://docs.google.com/presentation/d/1Q9DZQAHdvjIvfb9YU3wfmg8CUgZgTN9zkOPuIPjUUoY/edit?usp=sharing>
