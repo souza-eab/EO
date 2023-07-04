@@ -115,8 +115,11 @@ var getSRcollection = function(year, startDay, endDay, sensor, aoi, maskThese, e
       )
     );
     
-    // makes a global forest mask
-    var forCol = ee.ImageCollection("COPERNICUS/Landcover/100m/Proba-V/Global"); //PETER ADD
+    // makes a global forest mask 
+    // Product: Copernicus Global Land Service: Land Cover 100m: collection 2: epoch 2015: Globe>
+    // more: <https://zenodo.org/record/3243509>
+    var forCol = ee.ImageCollection("COPERNICUS/Landcover/100m/Proba-V/Global"); //PETER ADD (2015)
+    //var forCol = ee.ImageCollection("COPERNICUS/Landcover/100m/Proba-V-C3/Global"); //Edriano ADD (2015-2019)
     var imgFor = forCol.toBands(); //PETER ADD
     var forestimage = imgFor.select('2015_forest_type') //PETER ADD
     
@@ -126,8 +129,12 @@ var getSRcollection = function(year, startDay, endDay, sensor, aoi, maskThese, e
           'Band': forestimage //PETER ADD
     }).clip(aoi); //PETER ADD
     
-    //makes a global water mask
+    // makes a global water mask
+    // 
+    // more: <https://www.nature.com/articles/nature20584>
     var MappedWater = ee.Image("JRC/GSW1_1/GlobalSurfaceWater"); //PETER ADD
+    //var MappedWater = ee.Image("JRC/GSW1_4/GlobalSurfaceWater"); //Edriano ADD (2015-2019)
+    
     // calculates water persistence 0 to 100 //PETER ADD
     var MappedWaterBinary = MappedWater.expression( //PETER ADD 
       'band > 99 ? 0 :  1  ', { //PETER ADD
