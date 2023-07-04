@@ -1,10 +1,18 @@
-//######################################################################################################## 
-//#                                                                                                    #\\
-//#                      LANDTRENDR SOURCE AND FITTING PIXEL TIME SERIES PLOTTING                      #\\
-//#                                                                                                    #\\
-//########################################################################################################
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Main code body written by: Edriano Souza | Barbara Zimbres
+// Organization: Amazon Environmental Research Institute (IPAM)
+// Purpose: LANDTRENDR SOURCE AND FITTING PIXEL TIME SERIES PLOTTING  
+//  Preucations: 
+// date: 2023-07-04
+// Current version: 0.0.0
+// Collaborators: Edriano Souza | Barbara Zimbres (IPAM) 
+
+// New in this version:
+//  |> 0.0.0 - Applied test
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Adapted from: 
 // date: 2018-04-19
 // author: Zhiqiang Yang  | zhiqiang.yang@oregonstate.edu
 //         Justin Braaten | jstnbraaten@gmail.com
