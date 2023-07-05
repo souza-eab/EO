@@ -12,7 +12,6 @@ Environ. Res. Lett. 13 (2018). <https://doi.org/10.1088/1748-9326/aa9d9e>
 ### Baseado em:
 Pixel a Pixel | Pontos individuais
 
-
 ## (4) +Em: 
 (1) Documentação: <https://emapr.github.io/LT-GEE/index.html>;
 (2) +InfoLab: <http://emapr.ceoas.oregonstate.edu/>
