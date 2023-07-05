@@ -7,6 +7,7 @@
 // Current version: 0.0.1
 // Collaborators: Edriano Souza | Barbara Zimbres (IPAM) 
 
+
 // New in this version:
 //  |> 0.0.1 - Test and export loss (magnitude of change) and the year of detection.
 //  |> 0.0.0 - Applied test
