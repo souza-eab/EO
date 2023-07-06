@@ -459,12 +459,47 @@ var ndfiTransform = function(img) {
               'B4': ee.Image(img).select(['B4']),
               'B3': ee.Image(img).select(['B3']),
               'B1': ee.Image(img).select(['B1'])
-          }).rename('EVI');    
+          }).rename('EVI');
+
+  // Add Edriano (´paper BABI`)
+  var evi2 = ee.Image(img).expression(
+          'float(2.4*(((B4/10000) - (B3/10000)) / ((B4/10000) + ((B3/10000)+1))))',
+          {
+              'B4': ee.Image(img).select(['B4']),
+              'B3': ee.Image(img).select(['B3'])
+              //'B1': ee.Image(img).select(['B1'])
+          }).rename('EVI2');
+
+  // Add Edriano (´paper BABI`)
+  var ndwi = ee.Image(img).expression(
+          'float((((B2/10000) - (B4/10000)) / ((B2/10000) + ((B4/10000)))))',
+          {
+              'B4': ee.Image(img).select(['B2']),
+              'B3': ee.Image(img).select(['B4'])
+          }).rename('NDWI');
+  
+  // Add Edriano (´paper BABI`)
+  var savi = ee.Image(img).expression(
+          'float(1.5*(((B4/10000) - (B3/10000)) / ((B4/10000) + ((B3/10000)+0.5))))',
+          {
+              'B4': ee.Image(img).select(['B4']),
+              'B3': ee.Image(img).select(['B3'])
+              //'B1': ee.Image(img).select(['B1'])
+          }).rename('SAVI');
+
+  // Add Edriano (´paper BABI`)
+  var sr = ee.Image(img).expression(
+          'float(((B4/10000) - (B2/10000)))',
+          {
+              'B4': ee.Image(img).select(['B4']),
+              'B2': ee.Image(img).select(['B2'])
+              //'B1': ee.Image(img).select(['B1'])
+          }).rename('SR');
           
     var toExp = newImage
-          .addBands([ndfi.rename(['NDFI']), ndvi, evi])
-          .select(['band_0','band_1','band_2','band_3','NDFI','NDVI','EVI','B1','B2','B3','B4','B5'])
-          .rename(['GV','Shade','NPV','Soil','NDFI','NDVI','EVI','Blue','Green','Red','NIR','SWIR1']); 
+          .addBands([ndfi.rename(['NDFI']), ndvi, evi, evi2, ndwi, savi])
+          .select(['band_0','band_1','band_2','band_3','NDFI','NDVI','EVI','EVI2','NDWI','SAVI','SR','B1','B2','B3','B4','B5'])
+          .rename(['GV','Shade','NPV','Soil','NDFI','NDVI','EVI','EVI2','NDWI','SAVI','SR','Blue','Green','Red','NIR','SWIR1']); 
           //.updateMask(mask)
 
   toExp = toExp.select(['NDFI'])
