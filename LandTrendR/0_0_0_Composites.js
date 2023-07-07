@@ -6,7 +6,7 @@
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Main code adapted written by: Edriano Souza | Barbara Zimbres | Filipe 
+// Main code adapted written by: Edriano Souza | Felipe Lenti | Barbara Zimbres 
 // author: Justin Braaten | jstnbraaten@gmail.com
 // Organization: Amazon Environmental Research Institute (IPAM)
 // Purpose: this script will plot a time series of original and LandTrendr-fitted data
