@@ -37,6 +37,12 @@ var endYear = 2023;
 var startDay = '06-01'; // Dry
 var endDay = '09-30'; // Dry
 
+
+// Date-Refactored
+// var startDate == ee.Date.fromYMD(1985, 1,1)
+// var endDate = startDate.advance(39,'year')
+
+
 var index = 'NBR';
 var maskThese = ['cloud', 'shadow', 'snow']; //Filters +add |> water, waterplus, nonforest 
 var summaryScale = 30000; // About plot
