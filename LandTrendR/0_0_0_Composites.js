@@ -6,7 +6,7 @@
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Main code adapted written by: Edriano Souza | Felipe Lenti | Barbara Zimbres 
+// Main code adapted written by: Edriano Souza | Barbara Zimbres 
 // author: Justin Braaten | jstnbraaten@gmail.com
 // Organization: Amazon Environmental Research Institute (IPAM)
 // Purpose: this script will plot a time series of original and LandTrendr-fitted data
@@ -26,6 +26,10 @@ var aoi = ee.FeatureCollection('users/prv/Cerrado_Retangulo');
 Map.centerObject(aoi);
 
 
+// Date-Refactored
+// var startDate == ee.Date.fromYMD(1985, 1,1)
+// var endDate = startDate.advance(39,'year')
+
 // define parameters
 var startYear = 1985;
 var endYear = 2023;
@@ -37,10 +41,6 @@ var endYear = 2023;
 var startDay = '06-01'; // Dry
 var endDay = '09-30'; // Dry
 
-
-// Date-Refactored
-// var startDate == ee.Date.fromYMD(1985, 1,1)
-// var endDate = startDate.advance(39,'year')
 
 
 var index = 'NBR';
@@ -98,10 +98,14 @@ var getSummary = function(img, geom, scale) {
 //----- GET FITTED BAND STACK -----
 // run LandTrendr
 var lt = ltgee.runLT(startYear, endYear, startDay, endDay, aoi, index, [index], runParams, maskThese);
+// var lt = ltgee.runLT(startDate, endDate, aoi, index, [index], runParams, maskThese);
+
+startDate
 
 // get the fitted NBR out
 
 var fitBandStack = ltgee.getFittedData(lt, startYear, endYear, index);
+// var fitBandStack = ltgee.getFittedData(lt, startDate, endDate, index);
 print(fitBandStack,'fitBandStack')
 
 Map.addLayer(fitBandStack.select(['yr_2021']).clip(aoi),{},'NBR |LT-fitBandStack')
@@ -110,6 +114,7 @@ Map.addLayer(fitBandStack.select(['yr_2021']).clip(aoi),{},'NBR |LT-fitBandStack
 // build annual surface reflectance collection (cloud and shadow masked medoid composite)
 // Construir uma coleção anual de refletância de superfície (composto de medoid com máscara de nuvem e sombra)
 var annualSRcollection = ltgee.buildSRcollection(startYear, endYear, startDay, endDay, aoi, maskThese);
+// var annualSRcollection = ltgee.buildSRcollection(startDate,endDate, aoi, maskThese);
 print(annualSRcollection,'annualSRcollection')
 
 // Transform the annual surface reflectance bands to whatever is in the bandList variable
@@ -122,6 +127,8 @@ print(indexCollection ,'indexCollection')
 // transform image collection of NBR (from bandList) to a image band stack
 // Transformar a coleção de imagens NBR (de bandList) em uma pilha de bandas de imagens
 var rawBandStack = ltgee.collectionToBandStack(indexCollection, startYear, endYear);
+// var rawBandStack = ltgee.collectionToBandStack(indexCollection, startDate, endDate);
+
 print(rawBandStack,'rawBandStack')
 Map.addLayer(rawBandStack.select(['2021']).clip(aoi),{},'NBR |LT-rawBandStack')
 
@@ -138,6 +145,20 @@ for(var yr = startYear; yr <= endYear; yr++){
     yearBandStack = yearBandStack.addBands(tmp);
   }
 }
+
+
+// 2 ----- GET YEAR BAND STACK -----
+// var yearBandStack;
+// var tmp;
+// for(var yr = startYear; yr <= endYear; yr++){
+//   tmp = ee.Image(yr);
+//   tmp = tmp.select([0], [yr.toString()]);
+//   if(yr == startYear){
+//     yearBandStack = tmp;
+//   } else{
+//     yearBandStack = yearBandStack.addBands(tmp);
+//   }
+// }
 
 //----- MAKE ARRAYS -----
 var yearSummary = getSummary(yearBandStack, aoi, summaryScale).toArray();
