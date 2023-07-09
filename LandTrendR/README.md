@@ -10,7 +10,7 @@ Environ. Res. Lett. 13 (2018). <https://doi.org/10.1088/1748-9326/aa9d9e>
 (2) Recuperação;
 
 ### Baseado em:
-Pixel a Pixel | Pontos individuais
+Pixel a Pixel |>
 
 ## (4) +Em: 
 (1) Documentação: <https://emapr.github.io/LT-GEE/index.html>;
