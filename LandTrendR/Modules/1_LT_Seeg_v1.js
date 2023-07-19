@@ -36,7 +36,7 @@ print('IMPORTANT! Please be advised:');
 print('- This version of the LandTrendr.js modules') 
 print('  uses Landsat Collection 2 data');
 print('- This version (0.2.0) does NOT use the Roy et al. coefficients');
-print('- This version uses Mask lulc - MapBiomas - ColX');
+print('- This version uses Mask lulc - MapBiomas - Col7');
 //########################################################################################################
 //##### ANNUAL SR TIME SERIES COLLECTION BUILDING FUNCTIONS ##### 
 //########################################################################################################
