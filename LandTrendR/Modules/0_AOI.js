@@ -1,6 +1,9 @@
 // AOI 
 var pontos = ee.FeatureCollection('users/felipelenti/20230711_044903_loss_and_sec_veg');
 
+// addLayer
+Map.addLayer(pontos, {color: 'red'}, 'AOI')
+
 // Imprimir as coordenadas de cada AOI
 var imprimirCoordenadas = function(feature) {
   var ponto = ee.Feature(feature);
