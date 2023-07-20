@@ -22,3 +22,8 @@ Pixel a Pixel |>
 
 ## (6) Site Biomass:
 (1) link:<http://emapr.ceoas.oregonstate.edu/pages/data/viz/index.html>
+
+
+## (7) Output CSV RMSE:
+(1) link:<https://docs.google.com/spreadsheets/d/1GzlEGrOFkl0q_389vOODPaoL3uFgIjCE/edit?usp=sharing&ouid=107366299301952514765&rtpof=true&sd=true>
+
