@@ -25,5 +25,5 @@ Pixel a Pixel |>
 
 
 ## (7) Output CSV RMSE:
-(1) link:<https://docs.google.com/spreadsheets/d/1Jfnsi9pVxUGFoVapCt9u6bLhRrO7crn5/edit?usp=sharing&ouid=107366299301952514765&rtpof=true&sd=true>
+(1) link:<https://drive.google.com/drive/folders/1xv5vkoSk8l_WfBGHSTrnr_nr2A-7PsIN?usp=sharing>
 
