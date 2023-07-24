@@ -1587,11 +1587,11 @@ exports.coordsPanel = function(){
   var coordSectionLabel = ui.Label('Define Pixel Coordinates (optional)',{fontWeight: 'bold'});
   
   var latLabel = ui.Label('Latitude:');
-  var latBox = ui.Textbox({value:43.7929});
+  var latBox = ui.Textbox({value:-15.851597404114354});
   latBox.style().set('stretch', 'horizontal');
   
   var lonLabel = ui.Label('Longitude:');
-  var lonBox = ui.Textbox({value:-122.8848});
+  var lonBox = ui.Textbox({value:-47.211234608351944});
   lonBox.style().set('stretch', 'horizontal');
   
   return ui.Panel(
