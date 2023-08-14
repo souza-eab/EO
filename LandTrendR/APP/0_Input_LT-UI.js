@@ -6,14 +6,14 @@
 exports.paramPanel = function(){
 
 var runParams = [
-  {label: 'Max Segments:', value: 6},
+  {label: 'Max Segments:', value: 7},
   {label: 'Spike Threshold:', value: 0.9},
   {label: 'Vertex Count Overshoot:', value: 3},
   {label: 'Prevent One Year Recovery:', value: true},
   {label: 'Recovery Threshold:', value: 0.25},
   {label: 'p-value Threshold:', value: 0.05},
   {label: 'Best Model Proportion:', value: 0.75},
-  {label: 'Min Observations Needed:', value: 6},
+  {label: 'Min Observations Needed:', value: 7},
 ];
 
 var paramBoxes = [];
@@ -202,11 +202,11 @@ exports.fpsGet = function(fpsPanel){
 exports.colDatesPanel = function(){
   var dateSectionLabel = ui.Label('Define Date Range (month-day)',{fontWeight: 'bold'});
   var startDayLabel = ui.Label('Start Date:');
-  var startDayBox = ui.Textbox({value:'06-10'});
+  var startDayBox = ui.Textbox({value:'06-01'});
   startDayBox.style().set('stretch', 'horizontal');
   
   var endDayLabel = ui.Label('End Date:');
-  var endDayBox = ui.Textbox({value:'09-20'});
+  var endDayBox = ui.Textbox({value:'09-30'});
   endDayBox.style().set('stretch', 'horizontal');
   
   return ui.Panel(
@@ -305,11 +305,11 @@ exports.coordsPanel = function(){
   var coordSectionLabel = ui.Label('Define Pixel Coordinates (optional)',{fontWeight: 'bold'});
   
   var latLabel = ui.Label('Latitude:');
-  var latBox = ui.Textbox({value:43.7929});
+  var latBox = ui.Textbox({value:-15.851597404114354});
   latBox.style().set('stretch', 'horizontal');
   
   var lonLabel = ui.Label('Longitude:');
-  var lonBox = ui.Textbox({value:-122.8848});
+  var lonBox = ui.Textbox({value:-47.211234608351944});
   lonBox.style().set('stretch', 'horizontal');
   
   return ui.Panel(
@@ -335,7 +335,7 @@ exports.coordsGet = function(coordsPanel){
 exports.bufferPanel = function(userProps){
   var panelLabel = userProps.panelLabel || 'Define a Buffer Around Point (km)';
   var varLabel = userProps.varLabel || 'Buffer:';
-  var defVar = userProps.defVar || 50;
+  var defVar = userProps.defVar || 10;
   var bufferSectionLabel = ui.Label(panelLabel,{fontWeight: 'bold'});
   var bufferBoxLabel = ui.Label(varLabel);
   var bufferBox = ui.Textbox({value: defVar, style:{stretch: 'horizontal'}});
