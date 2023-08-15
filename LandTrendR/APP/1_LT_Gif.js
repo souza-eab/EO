@@ -19,6 +19,34 @@ developed by Gennadii Donchyts.
 
 */
 
+
+
+// Product add
+
+var cerr = ee.Image("projects/mapbiomas-workspace/AUXILIAR/biomas-2019-raster").eq(4).selfMask();
+
+var sec_veg = ee.Image("projects/mapbiomas-workspace/public/collection7_1/mapbiomas_collection71_secondary_vegetation_age_v1")
+            .select("secondary_vegetation_age_2021")
+            .selfMask()
+            .updateMask(cerr);
+            
+            
+            
+
+Map.addLayer(sec_veg, 
+            {palette:[
+                '#ffffe5',
+                '#f7fcb9',
+                '#d9f0a3',
+                '#addd8e',
+                '#78c679',
+                '#41ab5d',
+                '#238443',
+                '#006837',
+                '#004529'
+            ].reverse()},
+            "sec_veg_age_2021");  
+
 var theMap = ui.Map();
 ui.root.clear();
  
@@ -148,12 +176,12 @@ var plotTheMap = function(){
   }
     
   var ltParams = { 
-    maxSegments:            7,
+    maxSegments:            8,
     spikeThreshold:         0.9,
     vertexCountOvershoot:   3,
     preventOneYearRecovery: true,
-    recoveryThreshold:      0.75,
-    pvalThreshold:          0.05,
+    recoveryThreshold:      1,
+    pvalThreshold:          0.1,
     bestModelProportion:    0.75,
     minObservationsNeeded:  7,
     timeSeries: ltCol
@@ -384,12 +412,12 @@ theMap.onChangeZoom(function(z,b){
 exports.paramPanel = function(){
 
 var runParams = [
-  {label: 'Max Segments:', value: 7},
+  {label: 'Max Segments:', value: 8},
   {label: 'Spike Threshold:', value: 0.9},
   {label: 'Vertex Count Overshoot:', value: 3},
   {label: 'Prevent One Year Recovery:', value: true},
-  {label: 'Recovery Threshold:', value: 0.25},
-  {label: 'p-value Threshold:', value: 0.05},
+  {label: 'Recovery Threshold:', value: 1},
+  {label: 'p-value Threshold:', value: 0.1},
   {label: 'Best Model Proportion:', value: 0.75},
   {label: 'Min Observations Needed:', value: 7},
 ];
@@ -1687,5 +1715,4 @@ exports.ls = {
 exports.props = props;
 
 exports.setProps = setProps;
-
 
