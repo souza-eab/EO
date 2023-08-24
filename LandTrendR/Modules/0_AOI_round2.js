@@ -22,4 +22,25 @@
 17: [-44.32547470148165,-11.038594004898945]
 18: [-44.15105929247334,-11.033412526563287]
 19: [-45.081314362784795,-11.379133298351128  
- /*
+ */
+
+
+// Define a Point object.
+var AOI_round2 = ee.Geometry.Point(-49.12170662670784,-15.809106234938541);
+
+// Apply the buffer method to the Point object.
+var pointBuffer = AOI_round2.buffer({'distance': 1000});
+
+// Print the result to the console.
+print('point.buffer(...) =', pointBuffer);
+
+// Display relevant geometries on the map.
+
+Map.centerObject(AOI_round2, 16);
+Map.addLayer(AOI_round2,
+             {'color': 'black'},
+             'Geometry [black]: point');
+Map.addLayer(pointBuffer,
+             {'color': 'red'},
+             'Result [red]: point.buffer');
+
