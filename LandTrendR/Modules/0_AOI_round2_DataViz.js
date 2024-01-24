@@ -95,9 +95,15 @@ Map.setZoom(5.5)
 
 
 
+
+
 // Define a Point object.
 //var AOI_round2 = ee.Geometry.Point(-45.266480925804025,-11.829634919925066);
-var AOI_round2 = ee.Geometry.Point(-45.081314362784795,-11.379133298351128);
+//var AOI_round2 = ee.Geometry.Point(-45.081314362784795,-11.379133298351128); //
+//var AOI_round2 = ee.Geometry.Point(-45.39937799093191,-11.925875599319191); // Vauzinho, BA
+//var AOI_round2 = ee.Geometry.Point(-54.61543339408989,-16.00990782327285); // Jucimeira, MT
+//var AOI_round2 = ee.Geometry.Point(-54.61114185966606,-16.033006951551222); // Jucimeira2, MT
+var AOI_round2 = ee.Geometry.Point(-48.08248542732097,-7.657674076243871); // Ribeirão Cana Brava
 
 
 // Apply the buffer method to the Point object.
