@@ -107,7 +107,9 @@ Map.setZoom(5.5)
 //var AOI_round2 = ee.Geometry.Point(-48.04377578681804,-7.648657065174058); // Tabuleiro Alto, TO
 //var AOI_round2 = ee.Geometry.Point(-48.1090929407487,-7.67247517123241); // Lajinha, TO
 //var AOI_round2 = ee.Geometry.Point(-52.036927437404685,-18.89070712606298); // Lajinha2, GO
-var AOI_round2 = ee.Geometry.Point(-51.90687420432634,-18.86462180175331); // Vale do Aporé, GO
+//var AOI_round2 = ee.Geometry.Point(-51.90687420432634,-18.86462180175331); // Vale do Aporé, GO
+//var AOI_round2 = ee.Geometry.Point(-46.9769624927473,-19.178707714642652); // Fz Morro Agudo
+var AOI_round2 = ee.Geometry.Point([-46.48942911803145,-19.116632942516436); // Vale do Aporé, GO
 
 // Apply the buffer method to the Point object.
 var pointBuffer = AOI_round2.buffer({'distance': 1000});
