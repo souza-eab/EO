@@ -109,7 +109,13 @@ Map.setZoom(5.5)
 //var AOI_round2 = ee.Geometry.Point(-52.036927437404685,-18.89070712606298); // Lajinha2, GO
 //var AOI_round2 = ee.Geometry.Point(-51.90687420432634,-18.86462180175331); // Vale do Aporé, GO
 //var AOI_round2 = ee.Geometry.Point(-46.9769624927473,-19.178707714642652); // Fz Morro Agudo
-var AOI_round2 = ee.Geometry.Point([-46.48942911803145,-19.116632942516436); // Vale do Aporé, GO
+//var AOI_round2 = ee.Geometry.Point(-46.48942911803145,-19.116632942516436); // Vale do Aporé, GO
+//var AOI_round2 = ee.Geometry.Point(-45.50378225900385,-13.550152678041423); // Estr. Possebon, BA
+//var AOI_round2 = ee.Geometry.Point(-45.64454458810541,-13.509429688883838); // Fz Henke, BA
+//var AOI_round2 = ee.Geometry.Point(-44.32547470148165,-11.038594004898945); /// Barrinha, BA
+//var AOI_round2 = ee.Geometry.Point(-44.15105929247334,-11.033412526563287); /// Barro vermelho, BA
+var AOI_round2 = ee.Geometry.Point(-45.081314362784795,-11.379133298351128); //Fz Vale do Ouro, BA
+
 
 // Apply the buffer method to the Point object.
 var pointBuffer = AOI_round2.buffer({'distance': 1000});
@@ -119,7 +125,7 @@ print('point.buffer(...) =', pointBuffer);
 
 // Display relevant geometries on the map.
 
-Map.centerObject(AOI_round2, 16);
+Map.centerObject(AOI_round2, 15);
 Map.addLayer(AOI_round2,
              {'color': 'black'},
              'Geometry [black]: point');
